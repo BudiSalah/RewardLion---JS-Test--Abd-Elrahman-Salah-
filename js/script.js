@@ -13,7 +13,7 @@ function timeCounter() {
     let daysCircle = document.getElementById("days-circle")
     let hoursCircle = document.getElementById("hours-circle")
     let minutesCircle = document.getElementById("minutes-circle")
-    
+
     function timeUpdate() {
         let now = new Date().getTime()
         let distance = countDownDate - now
@@ -25,27 +25,27 @@ function timeCounter() {
         hoursOutput.innerText = hours
         minutesOutput.innerText = minutes
 
-        function circleUpdate(target) {
-            let progress = null
-            const maxProgress = 390
+        circleUpdate(daysCircle, days, hours, minutes)
+        circleUpdate(hoursCircle, days, hours, minutes)
+        circleUpdate(minutesCircle, days, hours, minutes)
+    }
 
-            if (target == daysCircle) {
-                progress = ((days / 10) * maxProgress)
-                target.setAttribute("stroke-dasharray", `${progress},20000`)
-            } else if (target == hoursCircle) {
-                progress = ((hours / 24) * maxProgress)
-                target.setAttribute("stroke-dasharray", `${progress},20000`)
-            } else {
-                progress = ((minutes / 60) * maxProgress)
-                target.setAttribute("stroke-dasharray", `${progress},20000`)
-            }
+    function circleUpdate(target, days, hours, minutes) {
+        let progress = null
+        const maxProgress = 390
 
-            target.parentElement.style.stroke = "#f33"
+        if (target == daysCircle) {
+            progress = ((days / 10) * maxProgress)
+            target.setAttribute("stroke-dasharray", `${progress},20000`)
+        } else if (target == hoursCircle) {
+            progress = ((hours / 24) * maxProgress)
+            target.setAttribute("stroke-dasharray", `${progress},20000`)
+        } else {
+            progress = ((minutes / 60) * maxProgress)
+            target.setAttribute("stroke-dasharray", `${progress},20000`)
         }
 
-        circleUpdate(daysCircle)
-        circleUpdate(hoursCircle)
-        circleUpdate(minutesCircle)
+        target.parentElement.style.stroke = "#f33"
     }
 
     timeUpdate()
