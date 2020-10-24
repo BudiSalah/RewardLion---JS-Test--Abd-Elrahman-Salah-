@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Test</title>
+    <style>
+        .time {
+            max-width: 70vw;
+            margin: 10vh auto 0;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        .time__title {
+            font-size: 32px;
+            text-transform: uppercase;
+        }
+
+        .time__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10vh 0;
+        }
+
+        .time__col {
+            position: relative;
+            flex: 0 0 33.3333333%;
+            width: 33.3333333%;
+            padding-top: 15px;
+            font-size: 42px;
+            text-transform: uppercase;
+        }
+
+        .circle {
+            position: absolute;
+            top: 10px;
+            left: calc(50% - ( 140px / 2 ) );
+            stroke: #eeeeee;
+            stroke-width: 5;
+            fill: none;
+        }
+
+        [class*="time__clock"] {
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            margin: 0 auto 30px;
+            border: 5px solid #eee;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="time">
+            <h1 class="time__title">Time Remaning</h1>
+            <div class="time__wrapper">
+                <div class="time__col">
+                    <svg width="140" height="140" class="circle">
+                        <circle id="days-circle" cx="130" cy="70" r="62" stroke-dasharray="390,20000" transform="rotate(-90,100,100)"></circle>
+                     </svg>
+                    <div id="time-days" class="time__clock-days">00</div>
+                    <div class="time__name">Days</div>
+                </div>
+                <div class="time__col">
+                    <svg width="140" height="140" class="circle">
+                        <circle id="hours-circle" cx="130" cy="70" r="62" stroke-dasharray="390,20000" transform="rotate(-90,100,100)"></circle>
+                     </svg>
+                    <div id="time-hours" class="time__clock-days">00</div>
+                    <div class="time__name">Hours</div>
+                </div>
+                <div class="time__col">
+                    <svg width="140" height="140" class="circle">
+                        <circle id="minutes-circle" cx="130" cy="70" r="62" stroke-dasharray="390,20000" transform="rotate(-90,100,100)"></circle>
+                     </svg>
+                    <div id="time-minutes" class="time__clock-days">00</div>
+                    <div class="time__name">Minutes</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+</html>
