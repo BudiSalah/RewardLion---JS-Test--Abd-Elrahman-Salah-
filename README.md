@@ -1,1 +1,1 @@
-This is a JS test for [Abd Elrahman Salah](https://upwork) by **RewardLion**.
+This is a JS test for [Abd Elrahman Salah](https://t.ly/Jwv68) by **RewardLion**.
