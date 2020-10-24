@@ -27,20 +27,20 @@ function timeCounter() {
 
         function circleUpdate(target) {
             let progress = null
-            let maxProgress = 390
+            const maxProgress = 390
+
             if (target == daysCircle) {
                 progress = ((days / 10) * maxProgress)
-                target.parentElement.style.stroke = "#f33"
                 target.setAttribute("stroke-dasharray", `${progress},20000`)
             } else if (target == hoursCircle) {
-                progress = ((hours / 24) * 390)
-                target.parentElement.style.stroke = "#f33"
+                progress = ((hours / 24) * maxProgress)
                 target.setAttribute("stroke-dasharray", `${progress},20000`)
             } else {
-                progress = ((minutes / 60) * 390)
-                target.parentElement.style.stroke = "#f33"
+                progress = ((minutes / 60) * maxProgress)
                 target.setAttribute("stroke-dasharray", `${progress},20000`)
             }
+
+            target.parentElement.style.stroke = "#f33"
         }
 
         circleUpdate(daysCircle)
